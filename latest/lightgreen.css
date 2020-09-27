@@ -10,16 +10,17 @@
   --date-text-shadow:#7a9973;
 }
 
-day {
+openmensa>canteen>day {
   border-radius:0.5rem;
 }
 
-day:before {
+openmensa>canteen>day:before {
   /* Show date */
   border-radius:0.5rem 0.5rem 0.2rem 0.2rem;
   text-shadow: 1px 1px 5px var(--date-text-shadow);
 }
 
-day>category {
+openmensa>canteen>day>category {
   border-radius:0.5rem 2rem 1rem;
+  background:var(--category-bg);
 }

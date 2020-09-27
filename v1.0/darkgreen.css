@@ -1,0 +1,15 @@
+:root {
+  --main-color:#8c0;
+  --main-bg: #00525e;
+  --day-container-bg:#0002;
+  --date-color:#448088;
+  --date-background:#69c25e;
+  --category-bg:#448088;
+  --price-color:#00dcff;
+  --times-open-color:white;
+  --times-closed-color:#444;
+}
+
+openmensa>canteen>day:before {
+  font-weight:bold;
+}

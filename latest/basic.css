@@ -32,6 +32,7 @@ openmensa:after {
 openmensa>canteen>* {
   display: block;
   background: var(--category-bg);
+  padding:0.2rem;
 }
 
 openmensa>canteen>name {
@@ -167,14 +168,14 @@ openmensa>canteen>version:before {
   content: "Parser: ";
 }
 
-day {
+openmensa>canteen>day {
   display: block;
   padding: 1px 1px 2px 1px;
   margin: 1px 1px 0.5rem 1px;
-  background: var(--day-container-bg);
+  background: var(--day-container-bg)
 }
 
-day>closed {
+openmensa>canteen>day>closed {
   display: block;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -183,11 +184,11 @@ day>closed {
   font-weight: bold;
 }
 
-day>closed:before {
+openmensa>canteen>day>closed:before {
   content: "Geschlossen";
 }
 
-day:before {
+openmensa>canteen>day:before {
   /* Show date */
   display: block;
   text-align: center;
@@ -200,14 +201,14 @@ day:before {
   top: 0;
 }
 
-day>category {
+openmensa>canteen>day>category {
   display: block;
   margin: 0.2rem;
   padding: 0.2rem;
   background: var(--category-bg);
 }
 
-day>category:before {
+openmensa>canteen>day>category:before {
   /* Show category name */
   display: inline-block;
   content: attr(name);
@@ -216,24 +217,24 @@ day>category:before {
   float: left;
 }
 
-day>category:after {
+openmensa>canteen>day>category:after {
   display: block;
   content: " ";
   clear: both;
 }
 
-day>category>meal {
+openmensa>canteen>day>category>meal {
   display: list-item;
   float: right;
   clear: right;
   width: 80%;
 }
 
-day>category>meal>name {
+openmensa>canteen>day>category>meal>name {
   display: block;
 }
 
-day>category>meal>price {
+openmensa>canteen>day>category>meal>price {
   display: inline-block;
   float: right;
   opacity: 0.3;
@@ -242,32 +243,32 @@ day>category>meal>price {
   color: var(--price-color);
 }
 
-day>category>meal>price:before {
+openmensa>canteen>day>category>meal>price:before {
   content: attr(role);
   text-transform: capitalize;
   display: block;
 }
 
-day>category>meal>price:after {
+openmensa>canteen>day>category>meal>price:after {
   content: " € ";
 }
 
-day>category>meal:hover>price, day>category>meal:active>price {
+openmensa>canteen>day>category>meal:hover>price, openmensa>canteen>day>category>meal:active>price {
   transition: opacity 300ms;
   opacity: 1;
 }
 
-day>category>meal>note {
+openmensa>canteen>day>category>meal>note {
   display: inline;
   opacity: 0.3;
   font-size: 0.7rem;
 }
 
-day>category>meal>note:before {
+openmensa>canteen>day>category>meal>note:before {
   content: '~';
 }
 
-day>category>meal:hover>note, day>category>meal:active>note {
+openmensa>canteen>day>category>meal:hover>note, openmensa>canteen>day>category>meal:active>note {
   transition: opacity 300ms;
   opacity: 1;
 }
@@ -291,14 +292,14 @@ day>category>meal:hover>note, day>category>meal:active>note {
     display: none;
   }
 
-  day>category:before {
+  openmensa>canteen>day>category:before {
     /* Show category name */
     display: block;
     margin: 0px;
     float: none;
   }
 
-  day>category>meal {
+  openmensa>canteen>day>category>meal {
     display: block;
     width: auto;
     float: none;
