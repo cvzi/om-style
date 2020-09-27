@@ -1,0 +1,25 @@
+:root {
+  --main-color:#3f4a3c;
+  --main-bg: #f5fbf3;
+  --day-container-bg: #0001;
+  --date-color:#f8fff8;
+  --date-background:#69c25e;
+  --category-bg:#f8fff8;
+  --price-color:#69c25e;
+
+  --date-text-shadow:#7a9973;
+}
+
+day {
+  border-radius:0.5rem;
+}
+
+day:before {
+  /* Show date */
+  border-radius:0.5rem 0.5rem 0.2rem 0.2rem;
+  text-shadow: 1px 1px 5px var(--date-text-shadow);
+}
+
+day>category {
+  border-radius:0.5rem 2rem 1rem;
+}
