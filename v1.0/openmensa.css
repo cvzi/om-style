@@ -1,0 +1,306 @@
+:root {
+  --main-color: black;
+  --main-bg: #EEE;
+  --day-container-bg: #CCC;
+  --date-color: black;
+  --date-background: #55;
+  --category-bg: white;
+  --price-color: #222;
+  --times-open-color: green;
+  --times-closed-color: #95818d;
+  --font-family: "Helvetica", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+}
+
+openmensa {
+  background: var(--main-bg);
+  color: var(--main-color);
+  font-family: var(--font-family);
+  max-width: 950px;
+  min-width: 400px;
+  margin: 0 auto;
+  font-size: 100%;
+}
+
+openmensa:after {
+  content: "Feed: " attr(version);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 0.5rem;
+}
+
+openmensa>canteen>* {
+  display: block;
+  background: var(--category-bg);
+}
+
+openmensa>canteen>name {
+  font-size: 2rem;
+}
+
+openmensa>canteen>address:before {
+  content: "Addresse: ";
+}
+
+openmensa>canteen>city:before {
+  content: "Stadt: ";
+}
+
+openmensa>canteen>phone:before {
+  content: "Telefon: ";
+}
+
+openmensa>canteen>location:before {
+  content: "Koordinaten: " attr(latitude) ", " attr(longitude);
+}
+
+openmensa>canteen>availability:before {
+  content: "Nutzbarkeit: ";
+}
+
+openmensa>canteen>times[type=opening]:before {
+  content: "Öffnungszeiten: ";
+}
+
+openmensa>canteen>times[type=opening]>*[closed] {
+  color: var(--times-closed-color);
+}
+
+openmensa>canteen>times[type=opening]>*[closed]:after {
+  content: "Geschlossen";
+}
+
+openmensa>canteen>times[type=opening]>*[open] {
+  color: var(--times-open-color);
+}
+
+openmensa>canteen>times[type=opening]>*[open]:after {
+  content: attr(open);
+}
+
+openmensa>canteen>times[type=opening]>monday:before {
+  content: "Montag:";
+}
+
+openmensa>canteen>times[type=opening]>tuesday:before {
+  content: "Dienstag:";
+}
+
+openmensa>canteen>times[type=opening]>wednesday:before {
+  content: "Mittwoch:";
+}
+
+openmensa>canteen>times[type=opening]>thursday:before {
+  content: "Donnerstag:";
+}
+
+openmensa>canteen>times[type=opening]>friday:before {
+  content: "Freitag:";
+}
+
+openmensa>canteen>times[type=opening]>saturday:before {
+  content: "Samstag:";
+}
+
+openmensa>canteen>times[type=opening]>sunday:before {
+  content: "Sonntag:";
+}
+
+openmensa>canteen>feed {
+  margin-top: 0.2rem;
+  border-top: 1px solid var(--date-background);
+  font-size: 0.8rem;
+}
+
+openmensa>canteen>feed:before {
+  font-size: 1.0rem;
+  content: attr(name);
+}
+
+openmensa>canteen>feed:after {
+  font-size: 0.7rem;
+  content: "Priority: " attr(priority);
+}
+
+openmensa>canteen>feed>url {
+  display: block;
+  font-family: monospace;
+}
+
+openmensa>canteen>feed>url:before {
+  content: "URL: ";
+  font-family: var(--font-family);
+}
+
+openmensa>canteen>feed>source {
+  display: block;
+  font-family: monospace;
+}
+
+openmensa>canteen>feed>source:before {
+  content: "Source: ";
+  font-family: var(--font-family);
+}
+
+openmensa>canteen>feed>schedule {
+  display: block;
+}
+
+openmensa>canteen>feed>schedule:before {
+  content: 'Schedule: ';
+}
+
+openmensa>canteen>feed>schedule:after {
+  font-size: 0.7rem;
+  font-family: monospace;
+  content: 'dayOfMonth="' attr(dayOfMonth) '" dayOfWeek="' attr(dayOfWeek) '" month="' attr(month) '" hour="' attr(hour) '" minute="' attr(minute) '" retry="' attr(retry) '"';
+}
+
+openmensa>canteen>version {
+  position: absolute;
+  right: 0px;
+  top: 1rem;
+  font-size: 0.5rem;
+}
+
+openmensa>canteen>version:before {
+  content: "Parser: ";
+}
+
+day {
+  display: block;
+  padding: 1px 1px 2px 1px;
+  margin: 1px 1px 0.5rem 1px;
+  background: var(--day-container-bg);
+}
+
+day>closed {
+  display: block;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  background: var(--category-bg);
+  text-align: center;
+  font-weight: bold;
+}
+
+day>closed:before {
+  content: "Geschlossen";
+}
+
+day:before {
+  /* Show date */
+  display: block;
+  text-align: center;
+  content: attr(date);
+  padding: 0.2rem;
+  background: var(--date-background);
+  color: var(--date-color);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+day>category {
+  display: block;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  background: var(--category-bg);
+}
+
+day>category:before {
+  /* Show category name */
+  display: inline-block;
+  content: attr(name);
+  font-weight: bold;
+  margin: 1rem;
+  float: left;
+}
+
+day>category:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+day>category>meal {
+  display: list-item;
+  float: right;
+  clear: right;
+  width: 80%;
+}
+
+day>category>meal>name {
+  display: block;
+}
+
+day>category>meal>price {
+  display: inline-block;
+  float: right;
+  opacity: 0.3;
+  font-size: 0.7rem;
+  padding: 2px;
+  color: var(--price-color);
+}
+
+day>category>meal>price:before {
+  content: attr(role);
+  text-transform: capitalize;
+  display: block;
+}
+
+day>category>meal>price:after {
+  content: " € ";
+}
+
+day>category>meal:hover>price, day>category>meal:active>price {
+  transition: opacity 300ms;
+  opacity: 1;
+}
+
+day>category>meal>note {
+  display: inline;
+  opacity: 0.3;
+  font-size: 0.7rem;
+}
+
+day>category>meal>note:before {
+  content: '~';
+}
+
+day>category>meal:hover>note, day>category>meal:active>note {
+  transition: opacity 300ms;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 991px) {
+  openmensa {
+    min-width: auto;
+    max-width: auto;
+    font-size: 250%;
+  }
+
+  openmensa>canteen>name {
+    font-size: 0.7rem;
+  }
+
+  openmensa:after {
+    content: "";
+  }
+
+  openmensa>canteen>version {
+    display: none;
+  }
+
+  day>category:before {
+    /* Show category name */
+    display: block;
+    margin: 0px;
+    float: none;
+  }
+
+  day>category>meal {
+    display: block;
+    width: auto;
+    float: none;
+  }
+}
