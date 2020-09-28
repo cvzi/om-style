@@ -29,6 +29,15 @@ openmensa:after {
   font-size: 0.5rem;
 }
 
+openmensa>canteen:empty:before {
+  display: block;
+  text-align: center;
+  content: "Keine Einträge";
+  padding: 0.2rem;
+  background: var(--date-background);
+  color: var(--date-color);
+}
+
 openmensa>canteen>* {
   display: block;
   background: var(--category-bg);
@@ -186,6 +195,16 @@ openmensa>canteen>day>closed {
 
 openmensa>canteen>day>closed:before {
   content: "Geschlossen";
+}
+
+openmensa>canteen>day:empty:after {
+  display: block;
+  content: "Keine Einträge";
+  margin: 0.2rem;
+  padding: 0.2rem;
+  background: var(--category-bg);
+  text-align: center;
+  font-weight: bold;
 }
 
 openmensa>canteen>day:before {
