@@ -1,0 +1,24 @@
+{
+  "name": "om-style",
+  "version": "1.0.0",
+  "description": "CSS style sheets for openmensa xml feeds",
+  "files": [
+    "basic.css",
+    "darkgreen.css",
+    "lightgreen.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvzi/om-style.git"
+  },
+  "keywords": [
+    "openmensa"
+  ],
+  "author": "cuzi",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cvzi/om-style/issues",
+    "email": "cuzi@openmail.cc"
+  },
+  "homepage": "https://github.com/cvzi/om-style"
+}
