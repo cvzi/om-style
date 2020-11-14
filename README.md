@@ -3,11 +3,11 @@ Style sheets for openmensa xml feeds
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="https://cvzi.github.io/om-style/latest/basic.css"?>
+<?xml-stylesheet type="text/css" href="https://cdn.jsdelivr.net/npm/om-style@1.0.0/basic.css"?>
 <openmensa ⋯
 ```
 
-Example feed: https://cvzi.github.io/mensa/feed/kaiserslautern_hska.xml
+Example feed: [https://cvzi.github.io/mensa/feed/kaiserslautern_hska.xml](https://cvzi.github.io/mensa/feed/kaiserslautern_hska.xml)
 
 Files:
 ```
